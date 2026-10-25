@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trailer-perception"
+version = "0.1.0"
+description = "Five-landmark trailer perception and calibrated articulated pose estimation"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.24,<3", "scipy>=1.10,<2", "opencv-python-headless>=4.8,<5", "PyYAML>=6,<7"]
+
+[project.optional-dependencies]
+detector = ["torch>=2.6", "torchvision>=0.21", "timm==1.0.19"]
+simulation = ["mujoco>=3.3,<4", "plyfile>=1.0,<2"]
+gaussian = ["gsplat==1.5.3", "plyfile>=1.0,<2", "torch>=2.6"]
+test = ["pytest>=8,<10"]
+
+[project.scripts]
+trailer-perception = "trailer_perception.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

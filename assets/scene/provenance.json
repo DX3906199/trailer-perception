@@ -1,0 +1,15 @@
+{
+  "units": "metres",
+  "asset_frame": "Zero-angle fitted hitch centre is the origin; +X toward body, +Y left, +Z up",
+  "gaussian_format": "Uncompressed standard 3DGS PLY; wxyz quaternion; log scale; logit opacity; SH degree 0",
+  "source": "User-provided trailer reconstruction and local project-derived B3 split, copied without changes",
+  "license": "User-provided project assets. No independent third-party asset license was present in the source directories; see repository ASSET_LICENSE.md for distribution terms.",
+  "ground": "Derived clean procedural texture using robust colours from user-provided scene, 0.02 metres per texel, periodic sampling",
+  "files": {
+    "trailer_visual_3dgs_local.ply": {"bytes": 2690717, "sha256": "4b7282647e9252f46e60ca0b4a8634bbc35190e9e63018ceb79da49017bdd9e2", "role": "Complete original 48041-Gaussian asset; zero-angle reference"},
+    "trailer_body_3dgs_local.ply": {"bytes": 2346238, "sha256": "f96198781306b7b59da8824d5deba67e06b75af897f3b9ce3a64c60a814a5697", "role": "41890 fixed Gaussians in asset frame"},
+    "trailer_movable_assembly_hinge_local.ply": {"bytes": 344853, "sha256": "6236621689419e3df175e5ac8c1b58ec5dd856af188ab3c4a73a20fe7c27b7f7", "role": "6151 Gaussians in hinge-local frame; drawbar plus front axle and wheels"},
+    "trailer_full_reconstructed_multires_local.obj": {"bytes": 8748488, "sha256": "2935f0208b6ab33369aa540622bc08925c2c4799d09a14fc10f786f48ef3a725", "role": "Whole reconstructed mesh, static preview only, no texture"},
+    "clean_ground_texture.png": {"bytes": 1583438, "sha256": "1fc2f24ef0818e3b5c8f946505d850883f092c6cd08b8e5c45b82d30bcfcdde7", "role": "Clean repeating ground texture"}
+  }
+}

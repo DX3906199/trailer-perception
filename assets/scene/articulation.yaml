@@ -1,0 +1,21 @@
+version: 1
+asset_frame:
+  origin: fitted_hitch_center_at_zero_angle
+  world_origin_m: [0.0, 0.0, 0.21]
+  axes: {x: toward_trailer_body, y: left, z: up}
+hinge:
+  origin_asset_m: [1.39, 0.0, 0.03]
+  axis: [0.0, 0.0, 1.0]
+  zero_angle_deg: 0.0
+  limits_deg: [-30.0, 30.0]
+hitch:
+  center_asset_m: [0.0, 0.0, 0.0]
+  center_hinge_m: [-1.39, 0.0, -0.03]
+assets:
+  body_gaussian: trailer_body_3dgs_local.ply
+  drawbar_gaussian: trailer_movable_assembly_hinge_local.ply
+segmentation:
+  method: Experiment-1 B3 multi-view propagation + KNN graph
+  source_gaussian_count: 48041
+  body_gaussian_count: 41890
+  movable_gaussian_count: 6151

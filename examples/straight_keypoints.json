@@ -1,0 +1,9 @@
+{
+  "keypoints": [[1156.7586792215027,817.7846982811875],[1154.5846104433258,638.717837602276],[784.6116590958318,633.366255467022],[776.871918378369,811.1518414163447],[958.4697356892999,979.660771735942]],
+  "visibility": [1,1,1,1,1],
+  "image_width": 1920,
+  "image_height": 1536,
+  "source": "Original synthetic straight scene, pitch 0 degrees, rendered asset labels",
+  "expected_hitch_base_m": [-1.7452394762650278,0.0,0.21],
+  "purpose": "Geometry regression and runnable demonstration, not an independent accuracy benchmark"
+}

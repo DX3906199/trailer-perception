@@ -1,0 +1,58 @@
+# Original image pixels. Resizing/cropping at inference must be inverted before PnP.
+camera:
+  width: 1920
+  height: 1536
+  fx: 515.8911076875
+  fy: 515.5384361700
+  cx: 958.4697356893
+  cy: 768.0515572629
+  distortion_model: equidistant
+  distortion_coefficients: [0.0954451275, -0.0110578011, -0.0082985936, 0.0018125346]
+  offset_m: [-0.6, 0.0, 0.7]
+  pitch_down_deg: 0.0
+  # Optional measured 3x3 rotation_base_from_optical overrides rear-view pitch.
+
+# Asset F origin: zero-angle hitch; +X towards box, +Y left, +Z up.
+# base_link: +X vehicle-forward, +Y left, +Z up. State [x,y,yaw,q] uses m/rad.
+# These are geometric priors from this particular metric trailer asset.
+geometry:
+  asset_height_m: 0.21
+  hinge_center_m: [1.39, 0.0, 0.03]
+  hinge_axis: [0.0, 0.0, 1.0]
+  angle_limits_deg: [-30.0, 30.0]
+
+# Calibrated front_rectangle_multiview_v2 coordinates. Box points are in F;
+# hitch point is in hinge-local H. Four rectangle corners exclude the arched cap.
+# Reference is rendered-asset calibration, not a surveyed real-world measurement.
+landmarks:
+  - name: body_front_right_lower
+    part: body
+    point_m: [0.8739374362467802, -0.806633404076272, 0.2875486927815016]
+  - name: body_front_right_upper_rectangle
+    part: body
+    point_m: [0.889462209250987, -0.814396219680494, 1.02744493524565]
+  - name: body_front_left_upper_rectangle
+    part: body
+    point_m: [0.9241696348623918, 0.7294457692242348, 1.0554775075296325]
+  - name: body_front_left_lower
+    part: body
+    point_m: [0.9224488458785944, 0.7515046757131144, 0.3115164528616159]
+  - name: hitch_center
+    part: drawbar
+    point_m: [-1.39, 0.0, -0.03]
+
+solver:
+  # Scores are optional; raw heatmap peaks are not calibrated probabilities.
+  minimum_confidence: 0.0
+  require_inside_image: true
+  minimum_box_area_px2: 25.0
+  angle_grid_step_deg: 2.0
+  translation_bounds_m: [[-20.0, -10.0], [5.0, 10.0]]
+  huber_scale_px: 5.0
+  maximum_reprojection_rms_px: 20.0
+  maximum_condition_number: 1.0e10
+  maximum_angle_std_deg: 15.0
+  pixel_noise_floor_px: 1.0
+  ambiguity_translation_m: 0.10
+  ambiguity_angle_deg: 5.0
+  ambiguity_cost_margin_px: 0.5

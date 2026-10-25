@@ -1,0 +1,156 @@
+{
+  "mode": "gaussian",
+  "image": "trailer_scene_gaussian_full.png",
+  "camera": {
+    "width": 1920,
+    "height": 1536,
+    "fx": 515.8911076875,
+    "fy": 515.53843617,
+    "cx": 958.4697356893,
+    "cy": 768.0515572629,
+    "distortion_model": "equidistant",
+    "distortion_coefficients": [
+      0.0954451275,
+      -0.0110578011,
+      -0.0082985936,
+      0.0018125346
+    ],
+    "offset_m": [
+      -0.6,
+      0.0,
+      0.7
+    ],
+    "pitch_down_deg": 0.0
+  },
+  "geometry_config": {
+    "camera": {
+      "width": 1920,
+      "height": 1536,
+      "fx": 515.8911076875,
+      "fy": 515.53843617,
+      "cx": 958.4697356893,
+      "cy": 768.0515572629,
+      "distortion_model": "equidistant",
+      "distortion_coefficients": [
+        0.0954451275,
+        -0.0110578011,
+        -0.0082985936,
+        0.0018125346
+      ],
+      "offset_m": [
+        -0.6,
+        0.0,
+        0.7
+      ],
+      "pitch_down_deg": 0.0
+    },
+    "geometry": {
+      "asset_height_m": 0.21,
+      "hinge_center_m": [
+        1.39,
+        0.0,
+        0.03
+      ],
+      "hinge_axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "angle_limits_deg": [
+        -30.0,
+        30.0
+      ]
+    },
+    "landmarks": [
+      {
+        "name": "body_front_right_lower",
+        "part": "body",
+        "point_m": [
+          0.8739374362467802,
+          -0.806633404076272,
+          0.2875486927815016
+        ]
+      },
+      {
+        "name": "body_front_right_upper_rectangle",
+        "part": "body",
+        "point_m": [
+          0.889462209250987,
+          -0.814396219680494,
+          1.02744493524565
+        ]
+      },
+      {
+        "name": "body_front_left_upper_rectangle",
+        "part": "body",
+        "point_m": [
+          0.9241696348623918,
+          0.7294457692242348,
+          1.0554775075296325
+        ]
+      },
+      {
+        "name": "body_front_left_lower",
+        "part": "body",
+        "point_m": [
+          0.9224488458785944,
+          0.7515046757131144,
+          0.3115164528616159
+        ]
+      },
+      {
+        "name": "hitch_center",
+        "part": "drawbar",
+        "point_m": [
+          -1.39,
+          0.0,
+          -0.03
+        ]
+      }
+    ],
+    "solver": {
+      "minimum_confidence": 0.0,
+      "require_inside_image": true,
+      "minimum_box_area_px2": 25.0,
+      "angle_grid_step_deg": 2.0,
+      "translation_bounds_m": [
+        [
+          -20.0,
+          -10.0
+        ],
+        [
+          5.0,
+          10.0
+        ]
+      ],
+      "huber_scale_px": 5.0,
+      "maximum_reprojection_rms_px": 20.0,
+      "maximum_condition_number": "1.0e10",
+      "maximum_angle_std_deg": 15.0,
+      "pixel_noise_floor_px": 1.0,
+      "ambiguity_translation_m": 0.1,
+      "ambiguity_angle_deg": 5.0,
+      "ambiguity_cost_margin_px": 0.5
+    }
+  },
+  "asset_height_m": 0.21,
+  "simulator_truth_state_xy_yaw_q": [
+    -2.0,
+    -2.4492935982947064e-16,
+    -3.141592653589793,
+    0.17453292519943295
+  ],
+  "camera_world_m": [
+    -1.4,
+    -7.347880794884119e-17,
+    0.7
+  ],
+  "ego_world": [
+    -2.0,
+    0.0,
+    180.0
+  ],
+  "drawbar_angle_deg": 10,
+  "projection": "equidistant_six_face_cubemap",
+  "elapsed_seconds": 4.12421000500035
+}

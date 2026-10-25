@@ -1,0 +1,40 @@
+<mujoco model="trailer_perception_demo">
+  <compiler angle="degree" meshdir="../assets/scene"/>
+  <option timestep="0.01" gravity="0 0 -9.81"/>
+  <visual>
+    <global offwidth="1920" offheight="1536"/>
+    <map znear="0.02" zfar="80"/>
+    <headlight ambient="0.35 0.35 0.35" diffuse="0 0 0" specular="0 0 0"/>
+  </visual>
+  <asset>
+    <texture name="sky" type="skybox" builtin="gradient" width="512" height="512"
+             rgb1="0.55 0.58 0.61" rgb2="0.76 0.78 0.79"/>
+    <texture name="ground_texture" type="2d" builtin="checker" width="256" height="256"
+             rgb1="0.30 0.32 0.31" rgb2="0.40 0.42 0.40"/>
+    <material name="ground_material" texture="ground_texture" texrepeat="15 15"/>
+    <mesh name="trailer_mesh" file="trailer_full_reconstructed_multires_local.obj"/>
+  </asset>
+  <worldbody>
+    <light directional="true" pos="0 0 8" dir="-0.3 -0.3 -1"/>
+    <geom name="ground" type="plane" size="30 30 0.1" material="ground_material"/>
+    <!-- Complete fixed mesh: no duplicated articulated proxies. -->
+    <body name="trailer" pos="0 0 0.21">
+      <geom type="mesh" mesh="trailer_mesh" rgba="0.60 0.65 0.67 1"
+            contype="0" conaffinity="0"/>
+    </body>
+    <body name="ego" mocap="true" pos="-2 0 0" euler="0 0 180">
+      <geom name="ego_body" type="box" pos="0 0 0.35" size="0.75 0.42 0.22"
+            rgba="0.15 0.35 0.9 1" contype="0" conaffinity="0"/>
+      <geom type="cylinder" pos="0.45 0.47 0.18" size="0.16 0.045" euler="90 0 0"
+            rgba="0.05 0.05 0.05 1" contype="0" conaffinity="0"/>
+      <geom type="cylinder" pos="0.45 -0.47 0.18" size="0.16 0.045" euler="90 0 0"
+            rgba="0.05 0.05 0.05 1" contype="0" conaffinity="0"/>
+      <geom type="cylinder" pos="-0.65 0.47 0.18" size="0.16 0.045" euler="90 0 0"
+            rgba="0.05 0.05 0.05 1" contype="0" conaffinity="0"/>
+      <geom type="cylinder" pos="-0.65 -0.47 0.18" size="0.16 0.045" euler="90 0 0"
+            rgba="0.05 0.05 0.05 1" contype="0" conaffinity="0"/>
+    </body>
+    <!-- A world-mounted render camera is placed from the calibrated ego extrinsics by Python. -->
+    <camera name="render_camera" pos="-1.4 0 0.7" xyaxes="0 -1 0 0 0 1" fovy="90"/>
+  </worldbody>
+</mujoco>

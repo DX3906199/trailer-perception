@@ -1,0 +1,21 @@
+{
+  "name": "DINOv2 M0 mixed 896",
+  "file": "dinov2_m0_896_mixed.pt",
+  "bytes": 93326555,
+  "sha256": "e0beceeadcec245607154e61d9031f2c25c2ac47628107338306b6cb5aabcaa2",
+  "release_url": "https://github.com/DX3906199/trailer-perception/releases/download/v0.1.0/dinov2_m0_896_mixed.pt",
+  "architecture": "Frozen DINOv2 ViT-S/14 + global five-heatmap decoder",
+  "training": {
+    "synthetic_images": 1000,
+    "real_images": 100,
+    "mixed_finetuning_epochs": 20,
+    "checkpoint_selection": "final epoch 20"
+  },
+  "keypoints": [
+    "body_front_right_lower",
+    "body_front_right_upper_rectangle",
+    "body_front_left_upper_rectangle",
+    "body_front_left_lower",
+    "hitch_center"
+  ]
+}
